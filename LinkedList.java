@@ -64,7 +64,20 @@ int data,data1;
       public void insertEnd(int data) 
     {    
        //TYPE YOUR CODE HERE 
-    }  
+       Node newNode = new Node(data); // Create a new node with the given data.
+    
+    // If the list is empty, the new node becomes both the head and the tail.
+    if (head == null) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail.next = newNode; // Set the next pointer of the current tail to the new node.
+        tail = newNode;      // Update the tail to the new node.
+    }
+    }
+   
+
+
      
 public void displayList() {
         Node current = head;
