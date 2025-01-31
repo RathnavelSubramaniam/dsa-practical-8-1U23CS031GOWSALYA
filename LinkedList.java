@@ -61,24 +61,29 @@ int data,data1;
           }
         }
     }
-      public void insertEnd(int data) 
-    {    
-       //TYPE YOUR CODE HERE 
-       Node newNode = new Node(data); // Create a new node with the given data.
-    
-    // If the list is empty, the new node becomes both the head and the tail.
-    if (head == null) {
-        head = newNode;
-        tail = newNode;
-    } else {
-        tail.next = newNode; // Set the next pointer of the current tail to the new node.
-        tail = newNode;      // Update the tail to the new node.
-    }
-    }
-   
-
-
-     
+      
+       public void insertEnd(int data)
+{
+//Create a new node
+Node newNode = new Node(data);
+//Checks if the list is empty
+if(head == null)
+{
+//If the list is empty, both head and tail will point to new node
+head = newNode;
+tail = newNode;
+}
+else
+{
+Node temp=head;
+while( temp.next!= null)
+{
+temp = temp.next;
+}
+temp.next=newNode;
+System.out.println("Element Inserted");
+}
+}
 public void displayList() {
         Node current = head;
         while (current != null) {
